@@ -7,8 +7,6 @@ public class Alarm implements IAlarm
 
     private Sensor sensor = new Sensor();
     private boolean alarmOn = false;
-    private long alarmCount = 0;
-
     public void check()
     {
         double sensorValue = sensor.readValue();
@@ -16,7 +14,6 @@ public class Alarm implements IAlarm
         if (sensorValue < lowThreshold || highThreshold < sensorValue)
         {
             alarmOn = true;
-            alarmCount += 1;
         } else {
             alarmOn = false;
         }
